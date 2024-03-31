@@ -13,5 +13,5 @@ class Magazijn extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['ProductId', 'VerpakkingsEenheid', 'AantalAanwezig'];
+    protected $fillable = ['ProductId', 'VerpakkingsEenheid', 'AantalAanwezig', 'LeveringInfo'];
 }

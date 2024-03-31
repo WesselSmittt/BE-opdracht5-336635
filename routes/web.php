@@ -4,6 +4,8 @@ use App\Models\Allergeen;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AllergeenController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +36,5 @@ require __DIR__ . '/auth.php';
 
 Route::get('/dashboard', [App\Http\Controllers\ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/leverancier/{name}', 'App\Http\Controllers\LeverancierController@show')->name('leverancier.show');
-// Route::get('/allergeen/{name}', 'App\Http\Controllers\AllergeenController@show')->name('allergeen.show');
 Route::get('/allergeen/{name}', [AllergeenController::class, 'show'])->name('allergeen.show');
+

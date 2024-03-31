@@ -13,13 +13,13 @@ class AllergeenController extends Controller
             ->where('Naam', $name)
             ->first();
 
-        $product = DB::table('product')
+        $products = DB::table('product')
             ->join('productperallergeen', 'product.id', '=', 'productperallergeen.product_id')
             ->join('allergeen', 'productperallergeen.allergeen_id', '=', 'allergeen.id')
             ->where('product.Naam', $name)
             ->select('product.*', 'allergeen.Naam as allergeen_naam', 'allergeen.Omschrijving as allergeen_omschrijving')
             ->get();
 
-        return view('allergeen.show', ['product' => $product, 'allergeen' => $allergeen]);
+        return view('allergeen.show', compact('products', 'allergeen'));
     }
 }
