@@ -20,7 +20,7 @@
         @if ($products->isEmpty())
             <div class="text-gray-200 text-xl">
                 Er is van dit product op dit moment geen voorraad aanwezig, de verwachte eerstvolgende levering is: 30-04-2023
-            </div>
+            </div> 
         @else
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
